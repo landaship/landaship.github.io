@@ -95,6 +95,18 @@ cell.indentationLevel = 10; // 设置cell的文字靠左边的距离，10*默认
  self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0);
 ```
 
-## 12.
+## 12.为什么Identify要用static的string 来声明？
+没有必要用static，NSString本来就是在静态存储区域的，用了static它还是在静态存储区域两个地址是一样的：
+
+```swift
+NSString *aaa = @"d";
+static NSString *bbb = @"d";
+NSLog(@"+++%p, %p", aaa,bbb);
+```
+日志输出
+```log
+2017-06-08 21:34:49.458 weraweqwe[61855:1165332] +++0x10337a068, 0x10337a068
+```
+
 
 
