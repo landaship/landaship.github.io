@@ -83,7 +83,7 @@ crontab -e
 
 ## 1.8 gitlab 如何取消owner 权限
 
-进入project menber，里面有个是否是owner的权限
+进入project menber，里面有个是否是owner的权限。
 
 
 ## 1.9.gitlab 有时候会报403 forbidden的错误
