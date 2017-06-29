@@ -108,5 +108,8 @@ NSLog(@"+++%p, %p", aaa,bbb);
 2017-06-08 21:34:49.458 weraweqwe[61855:1165332] +++0x10337a068, 0x10337a068
 ```
 
+## 13.endR额fresh为何会触发cell的reload动作？
+因为endRefresh会调整头的高度，这个UI调整动作会触发cell的重用机制。
+
 
 
