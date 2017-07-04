@@ -260,6 +260,12 @@ unicorn:HTTP服务器，应该就是整个gitlab网页是否能访问的基础�
 redis:日志存储系统（数据库）
 postgresql:数据库
 nginx:点子邮件代理web服务器
+Sidekiq：后台运行的监听异常故障的工具。
+介绍：https://docs.gitlab.com/ee/administration/troubleshooting/sidekiq.html
+
+```
+Sidekiq is the background job processor GitLab uses to asynchronously run tasks. When things go wrong it can be difficult to troubleshoot. These situations also tend to be high-pressure because a production system job queue may be filling up. Users will notice when this happens because new branches may not show up and merge requests may not be updated. The following are some troubleshooting steps that will help you diagnose the bottleneck.
+```
 
 # 7.gitlab 日志文件介绍：
 文件目录；/var/log/gitlab/gitlab-rails/
