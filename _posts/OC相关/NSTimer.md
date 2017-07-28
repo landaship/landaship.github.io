@@ -113,6 +113,8 @@ You can use this method to fire a repeating timer without interrupting its regul
 # 4.屏幕滚动的时候timer 为什么会停止？
 在滚动的时候timer会停止：只需要改一下他的模式就可以，默认是NSDefaultRunLoopMode，因为滚动也是在这个模式下，所以改成NSRunLoopCommonModes模式就可以了。
 
+NSRunLoopCommonModes 这是一组可配置的通用模式
+
 参考：http://blog.csdn.net/chengyingzhilian/article/details/8185669
 runloop介绍
 http://www.cnblogs.com/mddblog/p/6435510.html

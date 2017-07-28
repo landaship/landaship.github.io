@@ -89,6 +89,8 @@ crontab -e
 1 1 * * * /opt/gitlab/bin/gitlab-rake gitlab:backup:create
 ```
 
+crontab 介绍:http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html
+
 ## 1.8 gitlab 如何取消owner 权限
 
 进入project menber，里面有个是否是owner的权限。
