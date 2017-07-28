@@ -1,50 +1,27 @@
 # Site settings
-title: Louis
-description: "还好吧，随手记一些，方便自己也方便别人"
-baseurl: "" # for test: remove string '/space-jekyll-templa' to ''
-url: "http://victorvoid.github.io/space-jekyll-template/" # for test: remove string 'http://victorvoid.github.io' to '' but in production: 'https://yourusername.githu.io'
-# User settings
-username: Louis
-user_title: 这个是UserTitile
+name: Louis
 email: landaship@163.com
-twitter_username: landaship
-github_username:  landaship
-gplus_username:  landaship
-disqus_username: landaship
-profile_picture: http://image.tupian114.com/20140416/15000134.png
+author: Louis
+url: http://www.hifreud.com
+resume_site: http://www.hifreud.com/Resume.io/
+github: https://github.com/luoyan35714/
+baseurl: ""
+description: 没啥说的!
+meta_description: 生命在于折腾
+motto: It's our wits that make us men.
+banner: 学而不思则罔，思而不学则殆。
+
+#permalink: /:categories/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
+paginate: 10
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+
+github_username: landaship
+highlighter: Pygments
 
 # Build settings
 markdown: kramdown
-highlighter: rouge
-permalink: /:title/
 
+baidu_analysis: 94be4b0f9fc5d94cc0d0415ea6761ae9
 
-# html minify
-compress_html:
-  clippings: all
-  comments: all
-  endings: []
-  profile: false
-
-# Links to include in menu navigation
-links:
-  - title: home
-    url: /
-  - title: my posts
-    url: /posts
-  - title: series
-    url: /series
-  - title: tags
-    url: /tags
-  - title: about me
-    url: /about
-# projects in header index
-projects:
-  - name: asciilang
-    url: https://github.com/victorvoid/asciilang
-  - name: vim-frontend
-    url: https://github.com/victorvoid/vim-frontend
-  - name: generator-capybara
-    url: https://github.com/victorvoid/generator-capybara 
-# exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules']
