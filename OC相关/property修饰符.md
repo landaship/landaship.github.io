@@ -80,4 +80,125 @@ if (accountInfo) {
 libc++abi.dylib: terminating with uncaught exception of type NSException
 ```
 
+# 3.什么时候考虑用copy？
+
+```swift
+nsstring 用strong 可以添加appent字符串，用copy和mutableCopy都不可以，因为他们生成的都是不可变的字符串。
+详见：http://www.jianshu.com/p/e6a7cdcc705d
+
+在平时使用的时候，我们在使用的时候要注意以下两种情况  
+
+
+对外声明的容器或者组合类型的不可变数据：NSSet，NSString，NSArray，NSdictionary 等要使用copy。
+@property (nonatomic, strong copy) NSString *name;     所以我们都要用copy修饰   
+对外声明的容器或者组合类型的可变数据，要用strong，用copy修饰的，你内部修改这个值的时候会崩溃
+@property (nonatomic, ~~ copy~~ strong) NSMutableString *name;     
+
+
+情况一解释：  
+
+       @property (nonatomic, ~~strong~~ `copy`) NSString *name;     所以我们都要用copy修饰   
+       》 用的是strong或者retain
+       1.如果该变量是不可变的，你的修改会引起外部变量的修改。
+       2.如果该变量是可变的，那么外部修改这个对象的值会影响内部。
+       》 用copy修饰的时候则不会，因为他会生成一份拷贝，避免了相互影响
+
+
+
+栗子🌰:
+声明：
+
+#import <Foundation/Foundation.h>
+
+@interface HSPerson : NSObject
+
+@property (nonatomic, copy) NSString *name1;  ✅
+@property (nonatomic, strong) NSString *name2;❌
+
+@end
+
+
+赋值
+
+NSMutableString *string = [NSMutableString stringWithFormat:@"原始数据"];
+
+HSPerson *person = [[HSPerson alloc] init];
+
+// 不能改变person.name的值，因为其内部copy新的对象
+person.name1 = string;
+// 被改变 
+person.name2 = string;
+
+[string appendString:@" +++++被修改了"];
+
+NSLog(@"name1 = %@", person.name1);
+NSLog(@"name2 = %@", person.name2);
+
+
+结果：
+
+2017-05-19 14:01:39.961 aaaa[37494:1901421] name1 = 原始数据
+2017-05-19 14:01:39.962 aaaa[37494:1901421] name2 = 原始数据 +++++被修改了
+
+
+栗子🌰:
+声明：
+
+#import <Foundation/Foundation.h>
+
+@interface HSPerson : NSObject
+
+@property (nonatomic, copy) NSMutableString *name3;   
+@property (nonatomic, strong) NSMutableString *name4;   
+
+@end
+
+
+赋值
+
+NSMutableString *string = [NSMutableString stringWithFormat:@"汉斯哈哈哈"];
+
+HSPerson *person = [[HSPerson alloc] init];
+person.name = string;
+
+// 不能改变person.name的值，因为其内部copy新的对象
+[string appendString:@" hans"];
+
+ NSLog(@"name = %@", person.name);
+
+
+结果：
+
+name 
+
+
+情况二解释：
+
+
+NSMutableString 作为属性的话，只要是self. 开头的赋值都会触发它的copy方法，这个时候得到的值是 NSTaggedPointerString类型的，这种也是不可修改的，（mutable的数据要用strong或者retain，因为用copy修饰的话，这个可变的变量又变成不可以变的了，不知道为何）
+     
+3.用MSMutable 和不用mutable 有什么优缺点？
+     在多线程中，最好不要让别人修改你的数据，否则不好排查，所以函数传参数的时候最好不要设置成可变的。
+     对外暴露的属性中，你如果希望被别人修改那么就修改成mutable的，如果不希望，则修改成不可变的。修改可变的是用strong，不可以变的是用copy 
+
+
+
+5.为什么mutable的不能用copy属性？
+
+```
+
+
+
+assigned，retain，copy， readonly，__weak
+
+ @property (nonatomic, readonly) UILabel *accessoryViewLable;
+注意lable的用法，这里必须设置成readonly，防止别人修改，但是修改成这个属性一个后就不能够用self.accesoryViwlable 来访问了，因为他没有了set方法，只能这么访问，_accessoryViewLable = lable;
+
+
+
+delegate为什么用assign
+
+对象a创建并引用了对象b.对象b创建并引用了对象c.对象c创建并引用了对象b.
+这时候b和c的引用计数分别是2和1。当a不再使用b，调用release释放对b的所有权，因为c还引用了b，所以b的引用计数为1，b不会被释放。b不释放，c的引用计数就是1，c也不会被释放。从此，b和c永远留在内存中。
+
 

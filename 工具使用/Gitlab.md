@@ -1,19 +1,4 @@
----
-layout: post
-#标题配置
-title:  标题
-#时间配置
-date:   2016-08-27 01:08:00 +0800
-#大类配置
-categories: document
-#小类配置
-tag: 教程
----
 
-* content
-{:toc}
-
-中文文档：https://docs.gitlab.com.cn/omnibus/README.html
 
 # 1.GitLab 常见问题
 
@@ -103,6 +88,16 @@ crontab -e
 ```
 
 crontab 介绍:http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html
+
+删除某个文件以外的全部文件
+
+```
+# shopt -s extglob      （打开extglob模式）
+# rm -fr !(file1)
+ 
+如果是多个要排除的，可以这样：
+# rm -rf !(file1|file2) 
+```
 
 ## 1.8 gitlab 如何取消owner 权限
 

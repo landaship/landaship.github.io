@@ -119,4 +119,17 @@ IOS开发证书和授权文件说明
 
 ![](media/14987246977997.png)
 
+# 3.如何调适FrameWork
+1.保证你原来的工程能够跑
+2.保证你原来工程用的库和你需要调试的framework是一套
+3.在你原来工程中建立一个Untitled.xcworkspace
+4.添加你原来的工程
+5.在你原来的工程的子目录中添加你的framework工程
+![](media/15021156336131.jpg)
+
+6.运行调试
+7.如果不行，可以试试添加Target Dependencies
+
+
+
 

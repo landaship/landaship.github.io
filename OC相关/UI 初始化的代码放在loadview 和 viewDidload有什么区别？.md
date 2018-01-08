@@ -1,0 +1,7 @@
+# 1.首先说明这么做没有错，都能够实现你要的效果，但是不符合苹果的规定而已，苹果想要你做的就是loadview是用于自己定view的，如果你要修改控制器的view，建议到viewDidload去做。
+2.要知道苹果怎么规定要先看苹果官方的API，一句话总结，如果你要自定义一个控制器的view那么就重写loadView，否则就在viewDidload的方法里去修改这个view
+3.纠正一个错误，很多网上说的只有view为nil的时候才会调用loadView是错的，其实不管怎么样，loadview和viewDidload执行的次数是一样的。是如果你的view是空的，控制器会主动调用loadView，但是你view不是空的时候呢，这种情况就是你有了xib或者是nib文件，这个时候也会调用loadView，但是这个时候你调用loadView没有意义，因为系统控制器加载的是xib和nib的文件
+4.loadview中不需要调用super方法，1.是没有必要（因为你重写的loadView，就意味着你要重新弄 一个view，你调用了super方法以后，假如你没有xib，那么你相当于建了新view添加到superView上，如果你有xib，你手动调用的super其实也就是加载了xib，如果不调用super，他反而不会加载xib，你没有必要提系统去做这件事情，如果你想修改view，还是到viewdiaload去做）  2.是多建了一个view，浪费资源
+
+参考：https://segmentfault.com/q/1010000000174244
+

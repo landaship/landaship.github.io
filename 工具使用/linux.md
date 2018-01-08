@@ -46,4 +46,26 @@ export LANG=en_US.UTF-8
 # 8.查看端口是否被占用
 
  lsof -i:8080
+ 
+ # 9.查看磁盘还有多大
+ df -hl
+ 
+ df -h 查看每个根路径分区的大小
+ 
+ 
+# 9.如何用终端下载 文件
+ wget -O CodeReview https://download.jetbrains.8686c.com/upsource/upsource-2017.1.1922.zip
+ 
+ 
+# 10.设置屏幕是否锁定
+
+```swift
+if (self.appIdleTimerDisabled || self.mediaModuleIdleTimerDisabled) {
+    //不自动锁屏
+   [UIApplication sharedApplication].idleTimerDisabled = YES;
+} else {
+    //自动锁屏
+   [UIApplication sharedApplication].idleTimerDisabled = NO;
+}
+```
 
