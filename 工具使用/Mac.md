@@ -72,3 +72,8 @@ du -sh ./* |sort -n 把当前文件按照大小排序
 
 路径：~/Library/Developer/Shared/Documentation/DocSets
 
+
+## 2.8 清理Mac的软件
+OmniDiskSweeper 
+
+

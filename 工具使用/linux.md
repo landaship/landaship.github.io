@@ -62,7 +62,7 @@ export LANG=en_US.UTF-8
 ```swift
 if (self.appIdleTimerDisabled || self.mediaModuleIdleTimerDisabled) {
     //不自动锁屏
-   [UIApplication sharedApplication].idleTimerDisabled = YES;
+   [UIApplication sharedApplication].idleTimerDisabled = YES;****
 } else {
     //自动锁屏
    [UIApplication sharedApplication].idleTimerDisabled = NO;

@@ -1,6 +1,11 @@
 # cocoapod 使用
 ## 1.新建Podfile
-vim Podfile
+
+在***.xcodeproj 同级目录下执行命令
+
+```
+pod init 即可
+```
 ## 2.编写Podfile,[参数解析](./cocoaPods脚本解析.md)
 ```
 platform :ios, '6.0'
@@ -8,18 +13,6 @@ use_frameworks!
 target 'TKTrade' do 
 pod 'Masonry'
 end
-```
-
-## 3.初始化pod
-> pod setup 作用
- 
-用于指定默认的master specs repo（也就是所有三方源码管理的索引文件，默认是：https://github.com/CocoaPods/Specs.git ）并将镜像源文件下载到本地~/.cocoapods目录，这种情况下一般会非常慢，因为他要从国外的服务器下载索引文件到本地文件（索引文件有一个多G）。
-
-我们不能直接用pod setup，这个时候只能手动的clone一份国内的源，然后再更新他的镜像路径
-
-```
-git clone https://git.coding.net/CocoaPods/Specs.git ~/.cocoapods/repos/master
-pod repo update
 ```
 
 ## 4.导入三方库
@@ -51,7 +44,7 @@ FAQ
 
 ```
 pod repo remove master
-pod repo add master https://gitcafe.com/akuandev/Specs.git
+pod repo add master https://gitclub.cn/CocoaPods/Specs.git
 pod repo update
 ```
 http://blog.csdn.net/nn955/article/details/53043482

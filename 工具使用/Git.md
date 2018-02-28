@@ -1,5 +1,11 @@
-    # 1.Git如何和之前的版本做比较？
+#1. Git 命令
+1.1 查看远程仓库地址
+git remote -v
+
+
+1.Git如何和之前的版本做比较？
 如我当前版本10，我要和5版本比较，怎么做？
+
 
 比较当前的文件和那个文件之间的差异
 
@@ -34,29 +40,6 @@ index 718fdab..8db45b1 100644
 +# 4.
 +
 ```
-
-# 2.如何添加sshkey
-创建Project
-
-1.创建SSH Key：（http://192.168.1.63/help/ssh/README）
-1.1 检查是否生成过pub文件，如果存在则不需要创建了。
-命令：cat ~/.ssh/id_rsa.pub  ，（文件名可以有多种：id_dsa.pub，id_ecdsa.pub，id_ed25519.pub）
-如果文件存在则提示：
-
-![F58F4D8A-37EC-4521-99CE-A66323B1186](media/F58F4D8A-37EC-4521-99CE-A66323B1186C.png)
-
-文件不存在：
-![1CB5CCD5-D8C2-43E2-9333-F37BDEB76972](media/1CB5CCD5-D8C2-43E2-9333-F37BDEB76972.png)
-
-1.2 创建一个key pair
- 命令：ssh-keygen -t rsa -C "yelu@thinkive.com" -b 4096
-说明：
-1.your.email@example.com 为你公司邮箱的名字，如yelu@thinkive.com
-2.key pair路径哪里按照他的提示的默认路径输入，这样就不需要单独配置key pair路径了（/Users/yelu/.ssh/id_rsa）
-![22978831-4A3C-4788-839C-F2BFC42AB12D](media/22978831-4A3C-4788-839C-F2BFC42AB12D.png)
-
-1.3 拷贝 SSH key到剪贴板：
-pbcopy < ~/.ssh/id_rsa.pub
 
 1.4 拷贝key到gitlab配置栏
 ![DAC69D85-E6C8-4E10-BB2B-67585F0CED](media/DAC69D85-E6C8-4E10-BB2B-67585F0CEDC4.png)
@@ -141,4 +124,12 @@ GitHub客户端使用方法
 
 
 9.删除github账户的方法：http://www.cnblogs.com/dyllove98/p/3221872.html
+
+
+10. 版本回退
+git reflog  // 找到需要回归的版本
+git reset --hard Obfafd（回归的版本号）
+紧接着强制推送到远程分支：
+
+git push -f（强行回归）
 

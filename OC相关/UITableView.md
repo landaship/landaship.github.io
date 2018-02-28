@@ -111,5 +111,29 @@ NSLog(@"+++%p, %p", aaa,bbb);
 ## 13.endR额fresh为何会触发cell的reload动作？
 因为endRefresh会调整头的高度，这个UI调整动作会触发cell的重用机制。
 
+## 14.UITableView 添加了tableFooterView以后contensize会有一个默认高度，高度不固定，如果用来调整tableview高度的话要注意了（股交TKHqNewsViewController）
+ _mainView.tableFooterView = [UIView new];
+ 
+
+## 如何在uitaleview reloadData后再执行操作
+ 
+### 1. 通过layoutIfNeeded方法，强制重绘并等待完成。
+
+```swift
+[self.tableView reloadData];  
+[self.tableView layoutIfNeeded];  
+//刷新完成，执行后续需要执行的代码
+```
+
+### 2.reloadData方法会在主线程执行，通过GCD，使后续操作排队在reloadData后面执行。
+
+```swift
+[self.tableView reloadData];  
+dispatch_async(dispatch_get_main_queue(), ^{  
+    //刷新完成，执行后续代码
+});
+```
+
+
 
 

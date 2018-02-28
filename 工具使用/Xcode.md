@@ -128,7 +128,12 @@ IOS开发证书和授权文件说明
 ![](media/15021156336131.jpg)
 
 6.运行调试
-7.如果不行，可以试试添加Target Dependencies
+
+ 7.如果不行，可以试试添加Target Dependencies
+## 4. $(inherited) 的作用
+ 此处的Xcode中的（搜素头文件的路径中的参数值中的）inherited
+ 
+ 参考：https://www.crifan.com/xcode_inherited_meaning/
 
 
 
