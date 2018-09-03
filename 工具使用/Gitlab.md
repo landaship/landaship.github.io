@@ -419,4 +419,10 @@ ol具体是什么系统我不是很清楚，ol通常是oracle enterprise linux�
 
 
 
+# 13 GitLab更新服务器以后，submodule并不会跟着一起更新，需要手动修改.gitmodule还有.git/config 里面的IP成新服务器IP才会生效
+![](media/15359575669042.jpg)
+
+![](media/15359575517738.jpg)
+
+
 
