@@ -69,3 +69,18 @@ if (self.appIdleTimerDisabled || self.mediaModuleIdleTimerDisabled) {
 }
 ```
 
+## 11.两台linux 文件拷贝（参考https://blog.csdn.net/qq_30968657/article/details/72912070）
+scp root@192.168.90.155:/root/testCp.txt root@192.168.1.67:/root
+规则：
+主机登录名字@ip：文件路径  空格 目标主机登录名字@ip：存放路径
+
+## 12.删除某个文件以外的全部文件
+
+```
+# shopt -s extglob      （打开extglob模式）
+# rm -fr !(file1)
+ 
+如果是多个要排除的，可以这样：
+# rm -rf !(file1|file2) 
+```
+

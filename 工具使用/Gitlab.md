@@ -1,6 +1,7 @@
 
 
-# 1.GitLab 常见问题
+# 1.GitLab 安装及常见问题
+本文参考：https://www.jianshu.com/p/4f8afc36a115?utm_source=oschina-app
 
 ## 1.1 为何上传头像失败
 修改配置文件：
@@ -24,7 +25,7 @@
 
 ```swift
 vi /etc/gitlab/gitlab.rb
-gitlab-ctl reconfigure
+
 
 测试发送邮件：
 gitlab-rails console
@@ -70,7 +71,7 @@ https://gitlab.com/gitlab-org/gitlab-ce/blob/master/CHANGELOG.md
 
 
 
-## 1.7 gitlab如何备份和还原？
+## 1.7 gitlab设置自动备份
 http://blog.csdn.net/qwer026/article/details/52066474
 
 自动备份地址：
@@ -80,23 +81,13 @@ http://blog.csdn.net/qwer026/article/details/52066474
 ```
 设置自动备份：
 
-```
 sudo su -
-crontab -e
-// 这里设置是1点01分自动备份
+[crontab](http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html) -e
+
 1 1 * * * /opt/gitlab/bin/gitlab-rake gitlab:backup:create
-```
-
-crontab 介绍:http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html
-
-删除某个文件以外的全部文件
 
 ```
-# shopt -s extglob      （打开extglob模式）
-# rm -fr !(file1)
- 
-如果是多个要排除的，可以这样：
-# rm -rf !(file1|file2) 
+这里设置是1点01分自动备份
 ```
 
 ## 1.8 gitlab 如何取消owner 权限
@@ -140,11 +131,10 @@ sudo chkconfig postfix on
 
 sudo lokkit -s http -s ssh
 
-## 2.2. 添加镜像并安装，如果网络太慢，可以考虑切换中国区服务器：https://mirror.tuna.tsinghua.edu.cn/help/gitlab-ce/（中国地区镜像）
-
-curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
-sudo yum install gitlab-ce
-
+```
+sudo lokkit -s http -s ssh 会提示无法找到lokkit命令
+ yum install lokkit，lokkit 可以帮助我们设定iptables 打开http和ssh
+```
 ## 2.3.配置并启动 
 sudo gitlab-ctl reconfigure
 
@@ -170,14 +160,34 @@ sudo gitlab-ctl status
 
 # 3.gitlab 检测升级
 
-1.不需要停止gitlab服务，直接升级，停止后反而因为gitlab没有启动而升级失败
-2.一句话解决：没有错，跟安装的脚本是一样的。
+官网参考：
+https://about.gitlab.com/update/
+更新GitLab获取最新的特性。GitLab包含最新功能的版本会在每个月的22号发布。注意Gitlab升级的时候必须是同版本的，而且gitlab更新升级很快，如果你有一两年没有更新升级过，那么恭喜你了，你将会花费大量的时间用于更新升级，他不能跨大版本升级。
 
 ```
-sudo yum install gitlab-ce
+gitlab preinstall: It seems you are upgrading from 9.x version series
+gitlab preinstall: to 11.x series. It is recommended to upgrade
+gitlab preinstall: to the last minor version in a major version series first before
+gitlab preinstall: jumping to the next major version.
+gitlab preinstall: Please follow the upgrade documentation at https://docs.gitlab.com/ee/policy/maintenance.html#upgrade-recommendations
+gitlab preinstall: and upgrade to 10.8 first.
+错误：%pre(gitlab-ce-11.2.3-ce.0.el7.x86_64) 脚本执行失败，退出状态码为 1
+Error in PREIN scriptlet in rpm package gitlab-ce-11.2.3-ce.0.el7.x86_64
+gitlab-ce-9.3.0-ce.0.el7.x86_64 was supposed to be removed but is not!
+  验证中      : gitlab-ce-9.3.0-ce.0.el7.x86_64                             1/2 
+  验证中      : gitlab-ce-11.2.3-ce.0.el7.x86_64 
 ```
-3.官网参考：
-https://about.gitlab.com/update/
+## 3.1.创建备份,备份文件默认路径：/var/opt/gitlab/backups 
+
+```
+sudo gitlab-rake gitlab:backup:create STRATEGY=copy
+```
+
+## 3.2.更新GitLab
+
+```
+sudo yum install -y gitlab-ce
+```
 
 # 4.gitlab 备份还原
 ## 4.1 备份
@@ -298,4 +308,115 @@ sudo gitlab-ctl tail gitlab-rails
 # 拉取某个指定的日志文件
 sudo gitlab-ctl tail nginx/gitlab_error.log
 ```
+
+# 8 GitLab版本
+
+## 8.1 两个版本
+分CE（Community Edition 社区版本）和EE（Enterprise Edition企业版本）
+## 8.2 区别：
+https://about.gitlab.com/installation/ce-or-ee/?distro=centos-6
+
+## 8.3 两者的安装方法类似但是不同
+https://about.gitlab.com/installation/#centos-6
+
+1.安装和配置依赖包
+
+```
+以下命令会打开HTTP和SSH在系统防火墙的访问权限
+EE：
+sudo yum install -y curl policycoreutils-python openssh-server cronie 
+CE：
+sudo yum install -y curl policycoreutils-python openssh-server openssh-clients cronie 
+
+
+sudo lokkit -s http -s ssh 
+```
+
+2.安装邮件发送软件[postfix](https://baike.baidu.com/item/Postfix/10077421)    
+
+```
+sudo yum install postfix
+sudo service postfix start 
+sudo chkconfig postfix on 
+```
+3.添加GitLab包依赖和下载并安装包（这里CE和EE不一样）
+
+```
+EE：
+添加包依赖
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash 
+
+sudo EXTERNAL_URL="http://192.168.90.155" yum -y install gitlab-ee 
+
+CE：
+添加包依赖
+curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash 
+
+sudo EXTERNAL_URL="http://192.168.90.155" yum install -y gitlab-ce 
+```
+
+# 9.如何更新清华源
+
+安装的时候提示网络链接失败或者很慢，所以还是用国内做的镜像，目前有清华大学的还有浙江大学的，经过测试清华大学（https://mirror.tuna.tsinghua.edu.cn/help/gitlab-ce/）的目前访问不了，浙江大学（http://mirrors.zju.edu.cn），具体使用方法：
+
+## 9.1.新建 /etc/yum.repos.d/gitlab_gitlab-ce.repo，内容为:
+网上很多人文件名都瞎写成gitlab-ce.repo，自己没有实践过，实际上他们写的文件名不全
+
+```
+[gitlab-ce]
+name=gitlab-ce
+baseurl=http://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7
+repo_gpgcheck=0
+gpgcheck=0
+enabled=1
+gpgkey=https://packages.gitlab.com/gpg.key
+```
+
+其中baseurl 的规则，那个el$ 中的$ 要修改成e16或者e17（网上很多人都瞎写，都直接用别人的配置，都不知道他们怎么成功的，这个不改是不能用的） ，它是不同的目录，但是有相同的内容，如果这里不指定，则访问失败，想要验证路径是否正确，只需要把url放到浏览器中看是否能访问到即可
+![](media/15358723925456.jpg)
+
+
+
+## 9.2. 执行命令下载
+
+```
+将服务器上的软件包信息 现在本地缓存,以提高 搜索 安装软件的速度
+sudo yum makecache
+注意：执行上面这句脚本前要先将gitlab_gitlab-ee.repo 先改后缀保存起来，否则缓存的时候会执行gitlab_gitlab-ee.repo里面的脚本，这里本来就是跑不同的，会浪费很多时间
+
+安装gitlab-ce，默认装最新的
+sudo yum install gitlab-ce
+如果要指定版本：
+sudo yum install gitlab-ce-9.3.0-ce.0.el7.x86_64
+```
+
+如果以上方法还是装不了，就直接在gitlab提供的page中点击对应的安装包，他会跳转到安装页面中，按照他的安装方式安装即可
+https://packages.gitlab.com/gitlab/gitlab-ce
+
+
+# 10. 不小心装成了EE，如果弄回CE？
+没有找到是否可以共用的理论依据，但是想着数据库啥的都是用的同一个，应该不能共用，只能卸载了。但是没有在官网上找到官方的卸载的,有个官网参考：https://gitlab.com/gitlab-org/omnibus-gitlab/issues/135，有个民间参考：https://www.jianshu.com/p/4dd47d1f1c76
+1.sudo gitlab-ctl stop
+2.gitlab-ctl uninstall
+3.sudo rpm -e gitlab-ce
+4.杀死所有gitlab守护进程runsvdir
+5.删除所有gitlab文件
+find / -name gitlab|xargs rm -rf      删除所有包含gitlab的文件及目录
+6.删除备份文件，root目录下
+![](media/15359413484426.jpg)
+
+
+# 11.sudo gitlab-ctl reconfigure 卡死
+参考：https://blog.csdn.net/u010837612/article/details/78909545
+解决：sudo systemctl restart gitlab-runsvdir （启动gitlab守护进程）
+再执行：sudo gitlab-ctl reconfigure
+
+# 12.El6，EL7区别，EL跟OL的区别，下载RPM包时会用到
+EL是RedHatEnterpriseLinux的简写-EL6软件包用于在RedHat6.x,CentOS6.x,andCloudLinux6.x进行安装-EL5软件包用于在RedHat5.x,CentOS5.x,CloudLinux5.x的安装-EL7软件包用于在RedHat7.x,CentOS7.x,andCloudLinux7.x的安装
+
+
+ol具体是什么系统我不是很清楚，ol通常是oracle enterprise linux，这个是美国oracle公司以红帽为基础编译的一个linux发行版。它除了具有红帽系统的内核，自己还有一套据称是坚不可摧的内核。当然，是不是真的那么结实只有天知地知了。
+
+
+
 
