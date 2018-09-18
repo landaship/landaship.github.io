@@ -84,3 +84,32 @@ scp root@192.168.90.155:/root/testCp.txt root@192.168.1.67:/root
 # rm -rf !(file1|file2) 
 ```
 
+# 13.系统莫名其妙的出现各种命令找不到
+可能是因为系统环境变量没有了
+
+```
+#vi /etc/profile
+```
+让环境变量立即生效需要执行如下命令：  
+
+```
+#source /etc/profile 
+```
+添加了如下java运行环境
+
+```
+# For JDK 1.6.0_45
+export JAVA_HOME=/usr/local/java/jdk1.6.0_45/
+export JRE_HOME=/usr/local/java/jdk1.6.0_45/jre
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib.dt.jar:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib:$JRE_HOME/lib
+```
+
+# 14.查找linux 大型文件
+搜索 /u01/app/oracle/oradata/prod/ 下，超过500M大小的文件
+
+```
+find /u01/app/oracle/oradata/prod/  -type f -size +500M
+```
+
+

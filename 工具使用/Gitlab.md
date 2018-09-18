@@ -26,6 +26,7 @@
 ```swift
 vi /etc/gitlab/gitlab.rb
 
+gitlab-ctl reconfigure
 
 测试发送邮件：
 gitlab-rails console
@@ -74,21 +75,31 @@ https://gitlab.com/gitlab-org/gitlab-ce/blob/master/CHANGELOG.md
 ## 1.7 gitlab设置自动备份
 http://blog.csdn.net/qwer026/article/details/52066474
 
-自动备份地址：
+1.修改自动备份的默认路径：：
 
 ```
+vi /etc/gitlab/gitlab.rb
+
+gitlab_rails['manage_backup_path'] = true
+gitlab_rails['backup_path'] = "/data/gitlab/backups"
+默认的备份地址：
 /var/opt/gitlab/backups
 ```
-设置自动备份：
-
-sudo su -
-[crontab](http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html) -e
-
-1 1 * * * /opt/gitlab/bin/gitlab-rake gitlab:backup:create
+2.设置自动备份：[crontab 传送门](http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html) 
 
 ```
+vi /etc/crontab 
+1 1 * * * /opt/gitlab/bin/gitlab-rake gitlab:backup:create
 这里设置是1点01分自动备份
 ```
+
+3.重新配置
+sudo gitlab-ctl reconfigure
+
+4.检测
+执行备份命令，查看修改的目录下有没有生成对应的备份文件
+/opt/gitlab/bin/gitlab-rake gitlab:backup:create
+
 
 ## 1.8 gitlab 如何取消owner 权限
 
@@ -112,9 +123,54 @@ http://chuansong.me/n/2629829
 ssh-add -K ~/.ssh/id_rsa_gitLab
 ```
 
-## 1.11 gitlab 如何定时删除备份
-没有找到，目前只能够手动删除
+## 1.11 gitlab [如何定时删除备份](https://blog.csdn.net/ouyang_peng/article/details/77334215)
 
+### 1.11.1编辑自动化脚本
+
+```
+#vi auto_remove_old_backup.sh
+```
+内容
+
+```
+#!/bin/bash
+
+# 远程备份服务器 gitlab备份文件存放路径
+GitlabBackDir=/data/gitlab/backups
+
+# 查找远程备份路径下，超过20天 且文件后缀为.tar 的 Gitlab备份文件 然后删除
+find $GitlabBackDir -type f -mtime +20 -name '*.tar*' -exec rm {} \;
+```
+
+### 1.11.2 添加到自动执行的脚本
+
+```
+vi /etc/crontab 
+```
+内容
+
+
+```
+# edited by yelu 2018-9-10 添加定时任务，每天凌晨4点，执行删除过期的Gitlab备份文件
+0  4    * * *   root  /data/gitlab/auto_remove_old_backup.sh
+```
+
+### 1.11.3 重启cron服务
+编写完 /etc/crontab 文件之后，需要重新启动cron服务
+
+```
+#重新加载cron配置文件
+centerOS 6
+sudo /usr/sbin/service cron reload
+centerOS 7
+sudo systemctl reload crond.service
+
+#重启cron服务
+centerOS 6
+sudo /usr/sbin/service cron restart
+centerOS 7
+sudo systemctl start crond.service 
+```
 # 2.gitlab安装
 安装环境：（https://docs.gitlab.com/ce/install/requirements.html）
 系统内核：Red Hat 4.4.7-4 ,系统版本：CentOS release 6.5
