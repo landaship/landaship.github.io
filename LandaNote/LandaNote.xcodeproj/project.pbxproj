@@ -1,0 +1,779 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80D8AB7C218AEAFC00819025 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8AB7B218AEAFC00819025 /* AppDelegate.m */; };
+		80D8AB7F218AEAFC00819025 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8AB7E218AEAFC00819025 /* ViewController.m */; };
+		80D8AB82218AEAFC00819025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D8AB80218AEAFC00819025 /* Main.storyboard */; };
+		80D8AB85218AEAFC00819025 /* LandaNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80D8AB83218AEAFC00819025 /* LandaNote.xcdatamodeld */; };
+		80D8AB87218AEAFF00819025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D8AB86218AEAFF00819025 /* Assets.xcassets */; };
+		80D8AB8A218AEAFF00819025 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D8AB88218AEAFF00819025 /* LaunchScreen.storyboard */; };
+		80D8AB8D218AEAFF00819025 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8AB8C218AEAFF00819025 /* main.m */; };
+		80D8AB97218AEAFF00819025 /* LandaNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8AB96218AEAFF00819025 /* LandaNoteTests.m */; };
+		80D8ABA2218AEAFF00819025 /* LandaNoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8ABA1218AEAFF00819025 /* LandaNoteUITests.m */; };
+		80D8ABC0218AF3E600819025 /* LSMenusConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80D8ABBD218AF3E600819025 /* LSMenusConfig.plist */; };
+		80D8ABC1218AF3E600819025 /* LSMenusConfigHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8ABBE218AF3E600819025 /* LSMenusConfigHelper.m */; };
+		80D8ABC5218AF43800819025 /* LSMenusCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8ABC3218AF43800819025 /* LSMenusCellModel.m */; };
+		80D8ABC9218AF65100819025 /* LSMenusGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8ABC8218AF65100819025 /* LSMenusGroupModel.m */; };
+		80D8ABCD218AF6AB00819025 /* LSStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8ABCC218AF6AB00819025 /* LSStringHelper.m */; };
+		80D8ABD0218AFDB300819025 /* LSScrollViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8ABCF218AFDB300819025 /* LSScrollViewTestViewController.m */; };
+		80D8ABD4218AFFCB00819025 /* LSFontListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8ABD3218AFFCB00819025 /* LSFontListViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80D8AB93218AEAFF00819025 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80D8AB6F218AEAFC00819025 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80D8AB76218AEAFC00819025;
+			remoteInfo = LandaNote;
+		};
+		80D8AB9E218AEAFF00819025 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80D8AB6F218AEAFC00819025 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80D8AB76218AEAFC00819025;
+			remoteInfo = LandaNote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		80D8AB77218AEAFC00819025 /* LandaNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandaNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80D8AB7A218AEAFC00819025 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		80D8AB7B218AEAFC00819025 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		80D8AB7D218AEAFC00819025 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		80D8AB7E218AEAFC00819025 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		80D8AB81218AEAFC00819025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		80D8AB84218AEAFC00819025 /* LandaNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LandaNote.xcdatamodel; sourceTree = "<group>"; };
+		80D8AB86218AEAFF00819025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80D8AB89218AEAFF00819025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		80D8AB8B218AEAFF00819025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80D8AB8C218AEAFF00819025 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		80D8AB92218AEAFF00819025 /* LandaNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LandaNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80D8AB96218AEAFF00819025 /* LandaNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandaNoteTests.m; sourceTree = "<group>"; };
+		80D8AB98218AEAFF00819025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80D8AB9D218AEAFF00819025 /* LandaNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LandaNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80D8ABA1218AEAFF00819025 /* LandaNoteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandaNoteUITests.m; sourceTree = "<group>"; };
+		80D8ABA3218AEAFF00819025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80D8ABBD218AF3E600819025 /* LSMenusConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LSMenusConfig.plist; sourceTree = "<group>"; };
+		80D8ABBE218AF3E600819025 /* LSMenusConfigHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMenusConfigHelper.m; sourceTree = "<group>"; };
+		80D8ABBF218AF3E600819025 /* LSMenusConfigHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMenusConfigHelper.h; sourceTree = "<group>"; };
+		80D8ABC3218AF43800819025 /* LSMenusCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMenusCellModel.m; sourceTree = "<group>"; };
+		80D8ABC4218AF43800819025 /* LSMenusCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMenusCellModel.h; sourceTree = "<group>"; };
+		80D8ABC6218AF50C00819025 /* LSDefineHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSDefineHeader.h; sourceTree = "<group>"; };
+		80D8ABC7218AF65100819025 /* LSMenusGroupModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSMenusGroupModel.h; sourceTree = "<group>"; };
+		80D8ABC8218AF65100819025 /* LSMenusGroupModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSMenusGroupModel.m; sourceTree = "<group>"; };
+		80D8ABCB218AF6AB00819025 /* LSStringHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSStringHelper.h; sourceTree = "<group>"; };
+		80D8ABCC218AF6AB00819025 /* LSStringHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSStringHelper.m; sourceTree = "<group>"; };
+		80D8ABCE218AFDB300819025 /* LSScrollViewTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSScrollViewTestViewController.h; sourceTree = "<group>"; };
+		80D8ABCF218AFDB300819025 /* LSScrollViewTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSScrollViewTestViewController.m; sourceTree = "<group>"; };
+		80D8ABD2218AFFCB00819025 /* LSFontListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSFontListViewController.h; sourceTree = "<group>"; };
+		80D8ABD3218AFFCB00819025 /* LSFontListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSFontListViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80D8AB74218AEAFC00819025 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80D8AB8F218AEAFF00819025 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80D8AB9A218AEAFF00819025 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80D8AB6E218AEAFC00819025 = {
+			isa = PBXGroup;
+			children = (
+				80D8ABAF218AEC3D00819025 /* 目录 */,
+				80D8AB79218AEAFC00819025 /* LandaNote */,
+				80D8AB95218AEAFF00819025 /* LandaNoteTests */,
+				80D8ABA0218AEAFF00819025 /* LandaNoteUITests */,
+				80D8AB78218AEAFC00819025 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80D8AB78218AEAFC00819025 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80D8AB77218AEAFC00819025 /* LandaNote.app */,
+				80D8AB92218AEAFF00819025 /* LandaNoteTests.xctest */,
+				80D8AB9D218AEAFF00819025 /* LandaNoteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80D8AB79218AEAFC00819025 /* LandaNote */ = {
+			isa = PBXGroup;
+			children = (
+				80D8ABC2218AF42500819025 /* Model */,
+				80D8ABBC218AF3D100819025 /* 目录 */,
+				80D8ABBB218AF2B500819025 /* Cell */,
+				80D8AB7A218AEAFC00819025 /* AppDelegate.h */,
+				80D8AB7B218AEAFC00819025 /* AppDelegate.m */,
+				80D8AB7D218AEAFC00819025 /* ViewController.h */,
+				80D8AB7E218AEAFC00819025 /* ViewController.m */,
+				80D8AB80218AEAFC00819025 /* Main.storyboard */,
+				80D8AB86218AEAFF00819025 /* Assets.xcassets */,
+				80D8AB88218AEAFF00819025 /* LaunchScreen.storyboard */,
+				80D8AB8B218AEAFF00819025 /* Info.plist */,
+				80D8AB8C218AEAFF00819025 /* main.m */,
+				80D8AB83218AEAFC00819025 /* LandaNote.xcdatamodeld */,
+				80D8ABC6218AF50C00819025 /* LSDefineHeader.h */,
+			);
+			path = LandaNote;
+			sourceTree = "<group>";
+		};
+		80D8AB95218AEAFF00819025 /* LandaNoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				80D8AB96218AEAFF00819025 /* LandaNoteTests.m */,
+				80D8AB98218AEAFF00819025 /* Info.plist */,
+			);
+			path = LandaNoteTests;
+			sourceTree = "<group>";
+		};
+		80D8ABA0218AEAFF00819025 /* LandaNoteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				80D8ABA1218AEAFF00819025 /* LandaNoteUITests.m */,
+				80D8ABA3218AEAFF00819025 /* Info.plist */,
+			);
+			path = LandaNoteUITests;
+			sourceTree = "<group>";
+		};
+		80D8ABAF218AEC3D00819025 /* 目录 */ = {
+			isa = PBXGroup;
+			children = (
+				80D8ABBA218AED8B00819025 /* 封装 */,
+				80D8ABB9218AECE200819025 /* iPhone硬件 */,
+				80D8ABB6218AECB000819025 /* 安全 */,
+				80D8ABB5218AECA700819025 /* 开发工具 */,
+				80D8ABB4218AEC9A00819025 /* 算法&数据结构 */,
+				80D8ABB3218AEC9000819025 /* H5 */,
+				80D8ABB2218AEC7C00819025 /* 网络线程 */,
+				80D8ABB1218AEC6F00819025 /* 手势 */,
+				80D8ABB0218AEC6800819025 /* UI */,
+			);
+			path = "目录";
+			sourceTree = "<group>";
+		};
+		80D8ABB0218AEC6800819025 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				80D8ABB8218AECC800819025 /* UIScrollVIew */,
+				80D8ABB7218AECBE00819025 /* UITableView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		80D8ABB1218AEC6F00819025 /* 手势 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "手势";
+			sourceTree = "<group>";
+		};
+		80D8ABB2218AEC7C00819025 /* 网络线程 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "网络线程";
+			sourceTree = "<group>";
+		};
+		80D8ABB3218AEC9000819025 /* H5 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = H5;
+			sourceTree = "<group>";
+		};
+		80D8ABB4218AEC9A00819025 /* 算法&数据结构 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "算法&数据结构";
+			sourceTree = "<group>";
+		};
+		80D8ABB5218AECA700819025 /* 开发工具 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "开发工具";
+			sourceTree = "<group>";
+		};
+		80D8ABB6218AECB000819025 /* 安全 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "安全";
+			sourceTree = "<group>";
+		};
+		80D8ABB7218AECBE00819025 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		80D8ABB8218AECC800819025 /* UIScrollVIew */ = {
+			isa = PBXGroup;
+			children = (
+				80D8ABCE218AFDB300819025 /* LSScrollViewTestViewController.h */,
+				80D8ABCF218AFDB300819025 /* LSScrollViewTestViewController.m */,
+			);
+			path = UIScrollVIew;
+			sourceTree = "<group>";
+		};
+		80D8ABB9218AECE200819025 /* iPhone硬件 */ = {
+			isa = PBXGroup;
+			children = (
+				80D8ABD1218AFF7C00819025 /* 字体 */,
+			);
+			path = "iPhone硬件";
+			sourceTree = "<group>";
+		};
+		80D8ABBA218AED8B00819025 /* 封装 */ = {
+			isa = PBXGroup;
+			children = (
+				80D8ABCA218AF68100819025 /* LSString */,
+			);
+			path = "封装";
+			sourceTree = "<group>";
+		};
+		80D8ABBB218AF2B500819025 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		80D8ABBC218AF3D100819025 /* 目录 */ = {
+			isa = PBXGroup;
+			children = (
+				80D8ABBF218AF3E600819025 /* LSMenusConfigHelper.h */,
+				80D8ABBE218AF3E600819025 /* LSMenusConfigHelper.m */,
+				80D8ABBD218AF3E600819025 /* LSMenusConfig.plist */,
+			);
+			path = "目录";
+			sourceTree = "<group>";
+		};
+		80D8ABC2218AF42500819025 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80D8ABC4218AF43800819025 /* LSMenusCellModel.h */,
+				80D8ABC3218AF43800819025 /* LSMenusCellModel.m */,
+				80D8ABC7218AF65100819025 /* LSMenusGroupModel.h */,
+				80D8ABC8218AF65100819025 /* LSMenusGroupModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80D8ABCA218AF68100819025 /* LSString */ = {
+			isa = PBXGroup;
+			children = (
+				80D8ABCB218AF6AB00819025 /* LSStringHelper.h */,
+				80D8ABCC218AF6AB00819025 /* LSStringHelper.m */,
+			);
+			path = LSString;
+			sourceTree = "<group>";
+		};
+		80D8ABD1218AFF7C00819025 /* 字体 */ = {
+			isa = PBXGroup;
+			children = (
+				80D8ABD2218AFFCB00819025 /* LSFontListViewController.h */,
+				80D8ABD3218AFFCB00819025 /* LSFontListViewController.m */,
+			);
+			path = "字体";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80D8AB76218AEAFC00819025 /* LandaNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80D8ABA6218AEAFF00819025 /* Build configuration list for PBXNativeTarget "LandaNote" */;
+			buildPhases = (
+				80D8AB73218AEAFC00819025 /* Sources */,
+				80D8AB74218AEAFC00819025 /* Frameworks */,
+				80D8AB75218AEAFC00819025 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LandaNote;
+			productName = LandaNote;
+			productReference = 80D8AB77218AEAFC00819025 /* LandaNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		80D8AB91218AEAFF00819025 /* LandaNoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80D8ABA9218AEAFF00819025 /* Build configuration list for PBXNativeTarget "LandaNoteTests" */;
+			buildPhases = (
+				80D8AB8E218AEAFF00819025 /* Sources */,
+				80D8AB8F218AEAFF00819025 /* Frameworks */,
+				80D8AB90218AEAFF00819025 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80D8AB94218AEAFF00819025 /* PBXTargetDependency */,
+			);
+			name = LandaNoteTests;
+			productName = LandaNoteTests;
+			productReference = 80D8AB92218AEAFF00819025 /* LandaNoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		80D8AB9C218AEAFF00819025 /* LandaNoteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80D8ABAC218AEAFF00819025 /* Build configuration list for PBXNativeTarget "LandaNoteUITests" */;
+			buildPhases = (
+				80D8AB99218AEAFF00819025 /* Sources */,
+				80D8AB9A218AEAFF00819025 /* Frameworks */,
+				80D8AB9B218AEAFF00819025 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80D8AB9F218AEAFF00819025 /* PBXTargetDependency */,
+			);
+			name = LandaNoteUITests;
+			productName = LandaNoteUITests;
+			productReference = 80D8AB9D218AEAFF00819025 /* LandaNoteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80D8AB6F218AEAFC00819025 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Landaship;
+				TargetAttributes = {
+					80D8AB76218AEAFC00819025 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					80D8AB91218AEAFF00819025 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 80D8AB76218AEAFC00819025;
+					};
+					80D8AB9C218AEAFF00819025 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 80D8AB76218AEAFC00819025;
+					};
+				};
+			};
+			buildConfigurationList = 80D8AB72218AEAFC00819025 /* Build configuration list for PBXProject "LandaNote" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80D8AB6E218AEAFC00819025;
+			productRefGroup = 80D8AB78218AEAFC00819025 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80D8AB76218AEAFC00819025 /* LandaNote */,
+				80D8AB91218AEAFF00819025 /* LandaNoteTests */,
+				80D8AB9C218AEAFF00819025 /* LandaNoteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80D8AB75218AEAFC00819025 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80D8AB8A218AEAFF00819025 /* LaunchScreen.storyboard in Resources */,
+				80D8AB87218AEAFF00819025 /* Assets.xcassets in Resources */,
+				80D8AB82218AEAFC00819025 /* Main.storyboard in Resources */,
+				80D8ABC0218AF3E600819025 /* LSMenusConfig.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80D8AB90218AEAFF00819025 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80D8AB9B218AEAFF00819025 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80D8AB73218AEAFC00819025 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80D8AB7F218AEAFC00819025 /* ViewController.m in Sources */,
+				80D8ABCD218AF6AB00819025 /* LSStringHelper.m in Sources */,
+				80D8ABD4218AFFCB00819025 /* LSFontListViewController.m in Sources */,
+				80D8AB7C218AEAFC00819025 /* AppDelegate.m in Sources */,
+				80D8AB8D218AEAFF00819025 /* main.m in Sources */,
+				80D8ABC1218AF3E600819025 /* LSMenusConfigHelper.m in Sources */,
+				80D8AB85218AEAFC00819025 /* LandaNote.xcdatamodeld in Sources */,
+				80D8ABD0218AFDB300819025 /* LSScrollViewTestViewController.m in Sources */,
+				80D8ABC9218AF65100819025 /* LSMenusGroupModel.m in Sources */,
+				80D8ABC5218AF43800819025 /* LSMenusCellModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80D8AB8E218AEAFF00819025 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80D8AB97218AEAFF00819025 /* LandaNoteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80D8AB99218AEAFF00819025 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80D8ABA2218AEAFF00819025 /* LandaNoteUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80D8AB94218AEAFF00819025 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80D8AB76218AEAFC00819025 /* LandaNote */;
+			targetProxy = 80D8AB93218AEAFF00819025 /* PBXContainerItemProxy */;
+		};
+		80D8AB9F218AEAFF00819025 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80D8AB76218AEAFC00819025 /* LandaNote */;
+			targetProxy = 80D8AB9E218AEAFF00819025 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		80D8AB80218AEAFC00819025 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80D8AB81218AEAFC00819025 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		80D8AB88218AEAFF00819025 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80D8AB89218AEAFF00819025 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		80D8ABA4218AEAFF00819025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		80D8ABA5218AEAFF00819025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80D8ABA7218AEAFF00819025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HCXVYWN652;
+				INFOPLIST_FILE = LandaNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.landaship.LandaNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80D8ABA8218AEAFF00819025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HCXVYWN652;
+				INFOPLIST_FILE = LandaNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.landaship.LandaNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		80D8ABAA218AEAFF00819025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HCXVYWN652;
+				INFOPLIST_FILE = LandaNoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.landaship.LandaNoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LandaNote.app/LandaNote";
+			};
+			name = Debug;
+		};
+		80D8ABAB218AEAFF00819025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HCXVYWN652;
+				INFOPLIST_FILE = LandaNoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.landaship.LandaNoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LandaNote.app/LandaNote";
+			};
+			name = Release;
+		};
+		80D8ABAD218AEAFF00819025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HCXVYWN652;
+				INFOPLIST_FILE = LandaNoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.landaship.LandaNoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LandaNote;
+			};
+			name = Debug;
+		};
+		80D8ABAE218AEAFF00819025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HCXVYWN652;
+				INFOPLIST_FILE = LandaNoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.landaship.LandaNoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LandaNote;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80D8AB72218AEAFC00819025 /* Build configuration list for PBXProject "LandaNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80D8ABA4218AEAFF00819025 /* Debug */,
+				80D8ABA5218AEAFF00819025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80D8ABA6218AEAFF00819025 /* Build configuration list for PBXNativeTarget "LandaNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80D8ABA7218AEAFF00819025 /* Debug */,
+				80D8ABA8218AEAFF00819025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80D8ABA9218AEAFF00819025 /* Build configuration list for PBXNativeTarget "LandaNoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80D8ABAA218AEAFF00819025 /* Debug */,
+				80D8ABAB218AEAFF00819025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80D8ABAC218AEAFF00819025 /* Build configuration list for PBXNativeTarget "LandaNoteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80D8ABAD218AEAFF00819025 /* Debug */,
+				80D8ABAE218AEAFF00819025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		80D8AB83218AEAFC00819025 /* LandaNote.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				80D8AB84218AEAFC00819025 /* LandaNote.xcdatamodel */,
+			);
+			currentVersion = 80D8AB84218AEAFC00819025 /* LandaNote.xcdatamodel */;
+			path = LandaNote.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 80D8AB6F218AEAFC00819025 /* Project object */;
+}
