@@ -86,6 +86,8 @@ textView.secureTextEntry=YES;
 
 统计字符：
 
+```swift
+
 1、UITextView
 
 - (void)textViewDidChange:(UITextView *)textView
@@ -93,13 +95,15 @@ textView.secureTextEntry=YES;
     int count = [textView.text length];
     //这里的count就是字符个数了
 }
-
+```
 2、UITextField
 
 方法一：
 
 自己先为UITextField的Editing Changed事件添加一个响应方法
 
+
+```swift
 -(IBAction)valuechange//m_TextField是UITextField的一个IBOutlet
 {
      int count = [m_TextField.text length];
@@ -110,11 +114,15 @@ textView.secureTextEntry=YES;
         [m_TextField setText:[m_TextField.text substringToIndex:140]];//多出140时，只取前140个字符
     }
 }
-
+```
 方法二：
 
-在代理方法：-(BOOL)textField:(UITextField *)textFieldshouldChangeCharactersInRange:(NSRange)rangereplacementString:(NSString*)string，判断range.length的值来判断输入的是回格还是其它字符
 
+```swift
+在代理方法：
+-(BOOL)textField:(UITextField *)textFieldshouldChangeCharactersInRange:(NSRange)rangereplacementString:(NSString*)string
+判断range.length的值来判断输入的是回格还是其它字符
+```
  
 
 响应Return键：

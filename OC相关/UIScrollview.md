@@ -1,4 +1,4 @@
-# masonry 的自动布局方案
+    # masonry 的自动布局方案
 
 ## 1. 我草，加了这句话就不会出现多出44高度的不适应了
 
@@ -96,5 +96,9 @@ UIEdgeInsets    contentInset
 用来标示contentView上下左右距离scrllview 边框的距离，
 可以用来做内边距，还有动态移动tableview的位置，如键盘弹出，顶高tableview
 ```
+
+
+## 5.ScrollView中有UIPanGestureRecognizer
+再MJRefresh中使用到了他的eTKTradeChartPanGestureState 做一个状态判断，实际上在iOS11 手机上测试的时候，有时候并不能完全收到这几个状态。可以查看手势状态的介绍。
 
 

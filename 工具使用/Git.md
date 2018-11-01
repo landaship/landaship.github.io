@@ -126,10 +126,14 @@ GitHub客户端使用方法
 9.删除github账户的方法：http://www.cnblogs.com/dyllove98/p/3221872.html
 
 
-10. 版本回退
+# 10. 版本回退
 git reflog  // 找到需要回归的版本
 git reset --hard Obfafd（回归的版本号）
 紧接着强制推送到远程分支：
 
 git push -f（强行回归）
+
+# 11 git 的默认gitignore路径
+
+~/.gitignore
 

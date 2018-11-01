@@ -1,4 +1,4 @@
-# 当图片是disapble的时候会自动减淡图片颜色，这个时候需要：   btn.enabled = NO;  // 取消按钮响应事件
+# 1.当图片是disapble的时候会自动减淡图片颜色，这个时候需要：   btn.enabled = NO;  // 取消按钮响应事件
     btn.adjustsImageWhenDisabled = NO;  // 防止按下的时候按钮变颜色
 
 
@@ -19,4 +19,22 @@ Button正常情况下图片在左边，文字在右边
 参考：https://www.jianshu.com/p/0d3dbc30fad5
 
 # 2.去掉点击选择的状态
+
+
+
+# 3.修改button图片颜色
+
+```
+UIImage *image = [UIImage imageNamed:@"ic_trade_bank_securities_transfer"];forState:UIControlStateNormal];
+image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+[_bankTransferBtn setTintColor:kTradeMainColor];
+[_bankTransferBtn setImage:image forState:UIControlStateNormal];
+```
+
+解析：
+1.UIImageRenderingModeAutomatic // 根据图片的使用环境和所处的绘图上下文自动调整渲染模式。
+2.UIImageRenderingModeAlwaysOriginal // 始终绘制图片原始状态，不使用Tint Color。
+3.UIImageRenderingModeAlwaysTemplate // 始终根据Tint Color绘制图片，忽略图片的颜色信息。
+
+
 

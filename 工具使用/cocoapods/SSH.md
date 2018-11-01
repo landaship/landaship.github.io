@@ -15,7 +15,7 @@ RSA介绍：[RSA算法详解](http://www.guideep.com/read?guide=5676830073815040
 
 有了这个基础之后才可以说SSH免密登录
 1.先创建一对钥匙串PK（公钥），SK（私钥），命令ssh-keygen -t rsa -C "yelu@thinkive.com" -b 4096
-2.有了这对活宝以后，把PK放到GitLab或者GitHub上去，此时，服务器的authorized_keys中变包含了你这个公钥
+2.有了这对活宝以后，把PK放到GitLab或者GitHub上去，此时，服务器的authorized_keys中便包含了你这个公钥
 3.当客户端想免密登录的时候，客户端会发起一个登录请求，包括了自己的用户名和iP
 4.服务器收到这个请求后就会去authorized_keys查找是不是有你这个可信任的公钥，如果有，他就生成一个随机数，并把这个随机数用公钥加密发送给客户端
 5.客户端收到这个消息后用私钥解密，然后发送这段随机数明文发送给服务器
