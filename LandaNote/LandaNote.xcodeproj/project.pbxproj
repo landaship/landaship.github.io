@@ -23,6 +23,8 @@
 		80D8ABCD218AF6AB00819025 /* LSStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8ABCC218AF6AB00819025 /* LSStringHelper.m */; };
 		80D8ABD0218AFDB300819025 /* LSScrollViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8ABCF218AFDB300819025 /* LSScrollViewTestViewController.m */; };
 		80D8ABD4218AFFCB00819025 /* LSFontListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D8ABD3218AFFCB00819025 /* LSFontListViewController.m */; };
+		BFF1F47C218B50880091497D /* AssociatedTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF1F47B218B50880091497D /* AssociatedTestViewController.m */; };
+		BFF1F47F218B50B30091497D /* AssociatedTestViewController+AssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF1F47E218B50B30091497D /* AssociatedTestViewController+AssociatedObjects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,10 @@
 		80D8ABCF218AFDB300819025 /* LSScrollViewTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSScrollViewTestViewController.m; sourceTree = "<group>"; };
 		80D8ABD2218AFFCB00819025 /* LSFontListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSFontListViewController.h; sourceTree = "<group>"; };
 		80D8ABD3218AFFCB00819025 /* LSFontListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSFontListViewController.m; sourceTree = "<group>"; };
+		BFF1F47A218B50880091497D /* AssociatedTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssociatedTestViewController.h; sourceTree = "<group>"; };
+		BFF1F47B218B50880091497D /* AssociatedTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssociatedTestViewController.m; sourceTree = "<group>"; };
+		BFF1F47D218B50B30091497D /* AssociatedTestViewController+AssociatedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AssociatedTestViewController+AssociatedObjects.h"; sourceTree = "<group>"; };
+		BFF1F47E218B50B30091497D /* AssociatedTestViewController+AssociatedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AssociatedTestViewController+AssociatedObjects.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,7 @@
 		80D8ABAF218AEC3D00819025 /* 目录 */ = {
 			isa = PBXGroup;
 			children = (
+				BFF1F477218B50180091497D /* Runtime */,
 				80D8ABBA218AED8B00819025 /* 封装 */,
 				80D8ABB9218AECE200819025 /* iPhone硬件 */,
 				80D8ABB6218AECB000819025 /* 安全 */,
@@ -306,6 +313,33 @@
 			path = "字体";
 			sourceTree = "<group>";
 		};
+		BFF1F477218B50180091497D /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				BFF1F479218B50340091497D /* Associated关联 */,
+				BFF1F478218B50250091497D /* RunLoop */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
+		BFF1F478218B50250091497D /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
+		BFF1F479218B50340091497D /* Associated关联 */ = {
+			isa = PBXGroup;
+			children = (
+				BFF1F47D218B50B30091497D /* AssociatedTestViewController+AssociatedObjects.h */,
+				BFF1F47E218B50B30091497D /* AssociatedTestViewController+AssociatedObjects.m */,
+				BFF1F47A218B50880091497D /* AssociatedTestViewController.h */,
+				BFF1F47B218B50880091497D /* AssociatedTestViewController.m */,
+			);
+			path = "Associated关联";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -437,6 +471,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFF1F47C218B50880091497D /* AssociatedTestViewController.m in Sources */,
+				BFF1F47F218B50B30091497D /* AssociatedTestViewController+AssociatedObjects.m in Sources */,
 				80D8AB7F218AEAFC00819025 /* ViewController.m in Sources */,
 				80D8ABCD218AF6AB00819025 /* LSStringHelper.m in Sources */,
 				80D8ABD4218AFFCB00819025 /* LSFontListViewController.m in Sources */,

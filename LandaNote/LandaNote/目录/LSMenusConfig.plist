@@ -484,6 +484,25 @@
 					</dict>
 				</array>
 			</dict>
+			<dict>
+				<key>sectionFooterStr</key>
+				<string></string>
+				<key>sectionHeaderStr</key>
+				<string>runtime</string>
+				<key>Items</key>
+				<array>
+					<dict>
+						<key>cellStyle</key>
+						<integer>0</integer>
+						<key>className</key>
+						<string>AssociatedTestViewController</string>
+						<key>titleStr</key>
+						<string>属性关联</string>
+						<key>iconName</key>
+						<string>normal_trade_change</string>
+					</dict>
+				</array>
+			</dict>
 		</array>
 	</dict>
 </dict>

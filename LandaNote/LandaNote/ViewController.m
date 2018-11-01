@@ -12,6 +12,8 @@
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)NSArray *dataArr;
 @end
+// 全局变量，声明周期等同于程序生命周期
+__weak NSString *globalStr = nil;
 
 @implementation ViewController
 
@@ -108,5 +110,9 @@
     }
     newCtrl.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:newCtrl animated:YES];
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
 }
 @end
